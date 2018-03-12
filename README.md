@@ -22,7 +22,7 @@ https://www.ssense.com/en-us/women/product/31-phillip-lim/beige-utility-belted-j
 
 ---
 
-##### Before you submit:
+##### Before you submit via email:
 1. Have you used plain JS or jQuery for interactions?
 2. Is your code clean and well documented?
 3. Is your code cross-browser compatible?
@@ -33,4 +33,4 @@ https://www.ssense.com/en-us/women/product/31-phillip-lim/beige-utility-belted-j
 ###### Include your git repository so we can see progress on the task.
 
 If you have ANY questions, do not hesitate to ask!!
-You have one week to complete. Please email your work to brendan@shethinx.com and CC people@shethinx.com when complete.
+You have one week to complete. Please email your work to brendan@shethinx.com and CC people@shethinx.com when complete. **Do not submit any pull requests to the front-end-challenge repo.**
