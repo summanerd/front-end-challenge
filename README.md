@@ -2,6 +2,12 @@
 
 ---
 
+##### General:
+1. Use plain JS or jQuery for interactions. Do not use an MVC framework.
+2. Make sure your code clean and well documented.
+3. Make sure you have cross-browser checked your work.
+4. Code with proper semantic markup, accessibility and performance in mind.
+
 The top, middle section should appear/work the same as ssense.com products when you scroll up and down the page on desktop. The zoom feature should also work and trigger whatever image you click on.
 https://www.ssense.com/en-us/women/product/31-phillip-lim/beige-utility-belted-jacket/2513528
 
@@ -19,14 +25,6 @@ https://www.ssense.com/en-us/women/product/31-phillip-lim/beige-utility-belted-j
 2. product description.
 3. product selector (color, size, etc).
 4. bottom item images stacked below that.
-
----
-
-##### Before you submit via email:
-1. Have you used plain JS or jQuery for interactions?
-2. Is your code clean and well documented?
-3. Is your code cross-browser compatible?
-4. Have you developed the challenge with proper semantic markup, accessibility and performance in mind?
 
 ---
 
