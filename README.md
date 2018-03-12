@@ -14,7 +14,7 @@ https://www.ssense.com/en-us/women/product/31-phillip-lim/beige-utility-belted-j
 
 ---
 
-##### For smaller screens, have everything stack on top of each other in this order:
+##### For mobile responsiveness, have everything stack on top of each other in this order:
 1. Top product images in a carousel (like ssense).
 2. product description.
 3. product selector (color, size, etc).
