@@ -3,10 +3,11 @@
 ---
 
 ##### General:
-1. Use plain JS or jQuery for interactions. Do not use an MVC framework.
-2. Make sure your code clean and well documented.
-3. Make sure you have cross-browser checked your work (Last 2 versions of Chrome/Safari/Firefox/Edge. IE11 only).
-4. Code with proper semantic markup, accessibility and performance in mind.
+1. Use vanilla JS or jQuery for interactions. Do not use an MVC framework.
+2. Use plain CSS or SCSS. Do not use any libraries or frameworks.
+3. Make sure your code is clean and well documented.
+4. Make sure you have cross-browser checked your work (Last 2 versions of Chrome/Safari/Firefox/Edge. IE11 only).
+5. Code with proper semantic markup, accessibility and performance in mind.
 
 The top, middle section should appear/work the same as ssense.com products when you scroll up and down the page on desktop. The zoom feature should also work and trigger whatever image you click on.
 https://www.ssense.com/en-us/women/product/31-phillip-lim/purple-lofty-rib-crewneck-sweater/3156538 (NOTE: If the product is sold out please choose a different product or let us know)
