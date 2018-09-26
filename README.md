@@ -21,13 +21,7 @@ https://www.ssense.com/en-us/women/product/31-phillip-lim/purple-lofty-rib-crewn
 
 ---
 
-##### For mobile responsiveness, have everything stack on top of each other in this order:
-1. Top product images in a carousel (like ssense).
-2. product description.
-3. product selector (color, size, etc).
-4. bottom item images stacked below that.
-
-Create breakpoints as you feel are appropriate.
+##### For mobile responsiveness, check the design and create the breakpoint where you feel are appropriate.
 
 ---
 
