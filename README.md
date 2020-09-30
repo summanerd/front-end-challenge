@@ -29,4 +29,4 @@ https://www.ssense.com/en-us/women/product/31-phillip-lim/purple-lofty-rib-crewn
 ###### Include your git repository so we can see progress on the task.
 
 If you have ANY questions, do not hesitate to ask!!
-You have one week to complete. Please email your work to brendan@shethinx.com and CC people@shethinx.com when complete. **Do not submit any pull requests to the front-end-challenge repo.**
+You have one week to complete. Please email your work to chrism@shethinx.com and CC people@shethinx.com when complete. **Do not submit any pull requests to the front-end-challenge repo.**
