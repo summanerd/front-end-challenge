@@ -1,0 +1,19 @@
+{
+  "name": "mauricia-she-thinx",
+  "version": "1.0.0",
+  "description": "mauricia's thinx challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/summanerd/front-end-challenge.git"
+  },
+  "author": "mauricia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/summanerd/front-end-challenge/issues"
+  },
+  "homepage": "https://github.com/summanerd/front-end-challenge#readme"
+}
