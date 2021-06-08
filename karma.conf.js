@@ -22,8 +22,8 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-setup.js',
-      'test/**/*.test.js',
+      'test/test-setup.js',
+      'test/**/*.test.jsx',
     ],
 
     // list of files / patterns to exclude
@@ -33,7 +33,8 @@ module.exports = function (config) {
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
       'src/**/*.js': ['coverage'],
-      'test/**/*.test.js': ['webpack'],
+      'test/test-setup.js': ['webpack'],
+      'test/**/*.test.jsx': ['webpack'],
     },
 
     // test results reporter to use

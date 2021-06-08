@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 function getStore() {
   let color = 'black';
@@ -37,7 +36,7 @@ function getStore() {
         size,
         color,
         quantity,
-        price,
+        formattedPrice: price.toFixed(2),
       };
     },
   };
@@ -56,32 +55,32 @@ class App extends React.Component {
 
   render() {
     const {
-      size, color, quantity, price,
+      size, color, quantity, formattedPrice,
     } = this.state;
     const { onAddToCart } = this.store;
     return (
       <main>
-        <div>
+        <div data-prop="price">
           Price:
-          {price}
+          $
+          {formattedPrice}
         </div>
-        <div>
+        <div data-prop="color">
           Color:
           {color}
         </div>
-        <div>
+        <div data-prop="quantity">
           Quantity:
           {quantity}
         </div>
-        <div>
+        <div data-prop="size">
           Size:
           {size || '--'}
         </div>
-        <div><button type="submit" onClick={onAddToCart}>Add to Cart</button></div>
+        <div><button data-action="add-to-cart" type="submit" onClick={onAddToCart}>Add to Cart</button></div>
       </main>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
-module.hot.accept();
+export { App };
