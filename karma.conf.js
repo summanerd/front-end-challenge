@@ -1,4 +1,5 @@
 const webpackConfig = require('./webpack/development.config');
+// const istanbul = require('istanbul');
 
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
@@ -16,6 +17,7 @@ module.exports = function (config) {
       'karma-webpack',
       'karma-mocha',
       'karma-chrome-launcher',
+      'karma-coverage',
     ],
 
     // list of files / patterns to load in the browser
@@ -30,13 +32,46 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
+      'src/**/*.js': ['coverage'],
       'test/**/*.test.js': ['webpack'],
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      type: 'html',
+      dir: 'test/test-coverage/',
+      subdir: function getSubdir(browser) {
+        // normalization process to keep a consistent browser name across different
+        // OS
+        return browser.toLowerCase().split(/[ /-]/)[0];
+      },
+      check: {
+        global: {
+          statements: 50,
+          branches: 50,
+          functions: 50,
+          lines: 50,
+        },
+      },
+      watermarks: {
+        statements: [50, 75],
+        functions: [50, 75],
+        branches: [50, 75],
+        lines: [50, 75],
+      },
+      reporters: [
+        { type: 'html' },
+      ],
+      // instrumenters: { istanbul: istanbul },
+      instrumenter: {
+        '**/*.js': 'istanbul',
+        '**/*.jsx': 'istanbul',
+      },
+    },
 
     // web server port
     port: 9876,
