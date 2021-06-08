@@ -8,5 +8,19 @@
   },
   "globals": {
     "document": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js"],
+      "globals": {
+        "before": "readonly",
+        "after": "readonly",
+        "describe": "readonly",
+        "it": "readonly"
+      },
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
 }

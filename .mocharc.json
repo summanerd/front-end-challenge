@@ -1,0 +1,11 @@
+{
+  "recursive": true,
+  "reporter": "mochawesome",
+  "require": "mochawesome/register",
+  "watch-files": [
+    "src/**/*.js",
+    "test/**/*.js"
+  ],
+  "spec": "test/**/*.test.js",
+  "output": "report.html"
+}
