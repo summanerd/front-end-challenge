@@ -69,6 +69,7 @@ function getStore(onUpdate) {
         size,
         color,
         quantity,
+        canAddToCart: !!size && quantity > 0,
         formattedPrice: price.toFixed(2),
       };
     },
@@ -100,7 +101,7 @@ class App extends React.Component {
 
   render() {
     const {
-      size, color, quantity, formattedPrice,
+      size, color, quantity, formattedPrice, canAddToCart,
     } = this.state;
     const { onAddToCart, images, colorOptions } = this.store;
     return (
@@ -139,7 +140,7 @@ class App extends React.Component {
                   Size:
                   {size || '--'}
                 </div>
-                <div><button data-action="add-to-cart" type="submit" onClick={onAddToCart}>Add to Cart</button></div>
+                <div><button disabled={!canAddToCart} data-action="add-to-cart" type="submit" onClick={onAddToCart}>Add to Cart</button></div>
               </div>
             </div>
           </div>

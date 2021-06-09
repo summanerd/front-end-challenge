@@ -22,11 +22,16 @@ describe('Product Page', () => {
     });
 
     it('should display color as black', () => {
-      expect(SUT.find('[data-prop="color"]').text()).to.match(/Color:black/);
+      expect(SUT.find('ToggleControl').html()).to.match(/toggle-control__option--black\s+is-active/);
+      expect(SUT.find('ToggleControl').html()).not.to.match(/toggle-control__option--beige\s+is-active/);
     });
 
     it('should display quantity as 0', () => {
       expect(SUT.find('IncDecControl').html()).to.match(/quantity\(0\)/);
+    });
+
+    it('should disable add to cart button', () => {
+      expect(SUT.find('[data-action="add-to-cart"]').prop('disabled')).to.eq(true);
     });
   });
 });
