@@ -67,7 +67,7 @@ export class ProductDetails extends React.Component {
           />
         </div>
         <div>
-          <button disabled={!canAddToCart} data-action="add-to-cart" type="submit" onClick={this.onAddToCart}>
+          <button className="block" disabled={!canAddToCart} data-action="add-to-cart" type="submit" onClick={this.onAddToCart}>
             Add to Cart
           </button>
         </div>

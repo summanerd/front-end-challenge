@@ -1,0 +1,35 @@
+.product-slide {
+  display: none;
+
+  img {
+    max-width: 100%;
+  }
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.product-slides-pagination{
+  margin-bottom: $space-4;
+  text-align: center;
+
+  &__slide{
+    margin-right: $space-2;
+
+    &.is-active{
+      background-color: black;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+
+  .product-slide {
+    display: block;
+  }
+
+  .product-slides-pagination{
+    display: none;
+  }
+}

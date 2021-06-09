@@ -4,8 +4,10 @@
 @import './styles/display';
 @import './styles/controls';
 @import './styles/select-control';
+@import './styles/product-slides';
 
 button{
+  padding: $space-2;
   background-color: transparent;
   border: 1px solid black;
   color: black;
@@ -13,6 +15,10 @@ button{
 
   &:disabled{
     background-color: lightgray;
+  }
+
+  &.block{
+    width: 100%;
   }
 }
 
