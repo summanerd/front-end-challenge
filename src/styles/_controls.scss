@@ -1,0 +1,13 @@
+
+.inc-dec-control{
+  display: flex;
+
+  &__label {
+    padding: $space_1 $space_2;
+    border-top: $border;
+    border-bottom: $border;
+  }
+  button{
+    padding: $space_1;
+  }
+}

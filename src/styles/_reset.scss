@@ -1,0 +1,18 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+article, aside, section, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body, article, aside, section {
+  display: block;
+}
+
+body {
+  font-family: "Thinx";
+}

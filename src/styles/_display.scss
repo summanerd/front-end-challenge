@@ -1,0 +1,16 @@
+@import 'variables';
+
+.hide-for-small{
+  display: none;
+}
+
+@media screen and (min-width: $breakpoint) {
+
+  .hide-for-small{
+    display: initial;
+  }
+
+  .hide-for-large{
+    display: none;
+  }
+}

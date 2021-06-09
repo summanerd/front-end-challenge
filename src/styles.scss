@@ -1,13 +1,8 @@
-@import "styles/typography";
-
-body {
-  font-family: "Thinx";
-}
-
-body, p, div, main, section{
-  margin: 0;
-  padding: 0;
-}
+@import './styles/typography';
+@import './styles/variables';
+@import './styles/reset';
+@import './styles/display';
+@import './styles/controls';
 
 button{
   background-color: transparent;
@@ -21,32 +16,12 @@ button{
 }
 
 p {
-  margin-bottom: 16px;
-}
-
-.hide-for-small{
-  display: none;
+  margin-bottom: $space-3;
 }
 
 .section-container{
   margin: 0;
-  padding: 0 32px;
-}
-.top-container{
-
-}
-
-.inc-dec-control{
-  display: flex;
-
-  &__label {
-    padding: 4px 8px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-  button{
-    padding: 4px;
-  }
+  padding: 0 $space_4;
 }
 
 @media screen and (min-width: 1340px) {
@@ -68,25 +43,13 @@ p {
     }
   }
 
-  .hide-for-small{
-    display: initial;
-  }
-
-  .hide-for-large{
-    display: none;
-  }
-
   .fixed-columns{
     position: sticky;
     display: flex;
     flex-flow: column;
     text-align: left;
     top: 170px;
-    padding: 16px;
-  }
-
-  .text-upper-case{
-    text-transform: uppercase;
+    padding: $space_3;
   }
 
   .product-row-double{

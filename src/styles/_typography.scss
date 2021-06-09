@@ -4,3 +4,7 @@
   src: url('../assets/fonts/Graphik-Medium.woff') format('woff');
   src: url('../assets/fonts/Graphik-Medium.ttf')  format('truetype');
 }
+
+.text-upper-case{
+  text-transform: uppercase;
+}
