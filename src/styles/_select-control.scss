@@ -1,4 +1,5 @@
 .select{
+  position: relative;
   width: 100%;
   border: 1px solid $dark-gray;
   background-color: $off-white;
@@ -22,6 +23,8 @@
 
   &__options{
     display: none;
+    position: absolute;
+    width: 100%;
     margin: 0;
     padding: 0;
 

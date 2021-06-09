@@ -30,6 +30,12 @@
   }
 }
 
+.product-details {
+  > * {
+    margin-bottom: $space-3;
+  }
+}
+
 .toggle-control{
   display: flex;
   width: 100%;
