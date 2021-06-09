@@ -2,6 +2,7 @@ import React from 'react';
 import { ProductSlides } from './components/product-slides/product-slides';
 import { ProductSummary } from './components/product-summary/product-summary';
 import { IncDecControl } from './components/inc-dec-control/inc-dec-control';
+import { ToggleControl } from './components/toggle-control/toggle-control';
 import translations from './translations.json';
 import img1 from './assets/top section images/highwaist_black_front_1024x1024 (1).jpg';
 import img2 from './assets/top section images/highwaist_black_front_2_1024x1024.jpg';
@@ -31,6 +32,12 @@ function getStore(onUpdate) {
         { src: img4, description: 'highwaist front view' },
         { src: img5, description: 'highwaist front view' },
         { src: img6, description: 'highwaist front view' },
+      ];
+    },
+    get colorOptions() {
+      return [
+        { value: 'black', label: 'black', modifier: 'black' },
+        { value: 'beige', label: 'beige', modifier: 'beige' },
       ];
     },
     get size() {
@@ -74,6 +81,11 @@ class App extends React.Component {
     this.store = getStore(() => this.updateState());
     this.state = this.store.getState();
     this.onQuantityUpdate = this.onQuantityUpdate.bind(this);
+    this.onColorUpdate = this.onColorUpdate.bind(this);
+  }
+
+  onColorUpdate(newColor) {
+    this.store.updateColor(newColor);
   }
 
   onQuantityUpdate(adjustment) {
@@ -90,7 +102,7 @@ class App extends React.Component {
     const {
       size, color, quantity, formattedPrice,
     } = this.state;
-    const { onAddToCart, images } = this.store;
+    const { onAddToCart, images, colorOptions } = this.store;
     return (
       <main>
         <section className="section-container">
@@ -118,8 +130,7 @@ class App extends React.Component {
                   {formattedPrice}
                 </div>
                 <div data-prop="color">
-                  Color:
-                  {color}
+                  <ToggleControl onSelect={this.onColorUpdate} label="color" value={color} options={colorOptions} />
                 </div>
                 <div data-prop="quantity">
                   <IncDecControl onAdjust={this.onQuantityUpdate} label="quantity" quantity={quantity} max={5} />
