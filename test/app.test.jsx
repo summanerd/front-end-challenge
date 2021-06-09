@@ -1,6 +1,6 @@
 import React from 'react';
 import chai, { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import chaiEnzyme from 'chai-enzyme';
 import { App } from '../src/app';
 
@@ -10,7 +10,7 @@ describe('Product Page', () => {
   describe('When Page loads', () => {
     let SUT;
     beforeEach('mount app', () => {
-      SUT = shallow(<App />);
+      SUT = mount(<App />);
     });
 
     it('should display price as $35.00', () => {

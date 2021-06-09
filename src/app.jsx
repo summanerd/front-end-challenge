@@ -1,8 +1,7 @@
 import React from 'react';
 import { ProductSlides } from './components/product-slides/product-slides';
 import { ProductSummary } from './components/product-summary/product-summary';
-import { IncDecControl } from './components/inc-dec-control/inc-dec-control';
-import { ToggleControl } from './components/toggle-control/toggle-control';
+import { ProductDetails } from './components/product-details/product-details';
 import translations from './translations.json';
 import img1 from './assets/top section images/highwaist_black_front_1024x1024 (1).jpg';
 import img2 from './assets/top section images/highwaist_black_front_2_1024x1024.jpg';
@@ -17,7 +16,7 @@ import bottomImg4 from './assets/bottom section images/thinx_productpage_-07.jpg
 import bottomImg5 from './assets/bottom section images/thinx_productpage_-08.jpg';
 import './styles.scss';
 
-function getStore(onUpdate) {
+function getStore() {
   let color = 'black';
   let size;
   let quantity = 0;
@@ -54,15 +53,12 @@ function getStore(onUpdate) {
     },
     updateQuantity(newQuantity) {
       quantity = newQuantity;
-      onUpdate();
     },
     updateSize(newSize) {
       size = newSize;
-      onUpdate();
     },
     updateColor(newColor) {
       color = newColor;
-      onUpdate();
     },
     getState() {
       return {
@@ -79,31 +75,12 @@ function getStore(onUpdate) {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.store = getStore(() => this.updateState());
+    this.store = getStore();
     this.state = this.store.getState();
-    this.onQuantityUpdate = this.onQuantityUpdate.bind(this);
-    this.onColorUpdate = this.onColorUpdate.bind(this);
-  }
-
-  onColorUpdate(newColor) {
-    this.store.updateColor(newColor);
-  }
-
-  onQuantityUpdate(adjustment) {
-    const { quantity } = this.state;
-
-    this.store.updateQuantity(quantity + adjustment);
-  }
-
-  updateState() {
-    this.setState(this.store.getState());
   }
 
   render() {
-    const {
-      size, color, quantity, formattedPrice, canAddToCart,
-    } = this.state;
-    const { onAddToCart, images, colorOptions } = this.store;
+    const { images } = this.store;
     return (
       <main>
         <section className="section-container">
@@ -125,22 +102,7 @@ class App extends React.Component {
                   <p>{translations.productDescription1}</p>
                   <p>{translations.productDescription2}</p>
                 </div>
-                <div data-prop="price">
-                  Price:
-                  $
-                  {formattedPrice}
-                </div>
-                <div data-prop="color">
-                  <ToggleControl onSelect={this.onColorUpdate} label="color" value={color} options={colorOptions} />
-                </div>
-                <div data-prop="quantity">
-                  <IncDecControl onAdjust={this.onQuantityUpdate} label="quantity" quantity={quantity} max={5} />
-                </div>
-                <div data-prop="size">
-                  Size:
-                  {size || '--'}
-                </div>
-                <div><button disabled={!canAddToCart} data-action="add-to-cart" type="submit" onClick={onAddToCart}>Add to Cart</button></div>
+                <ProductDetails store={this.store} />
               </div>
             </div>
           </div>
