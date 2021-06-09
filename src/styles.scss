@@ -1,4 +1,4 @@
-p, div, main{
+body, p, div, main, section{
   margin: 0;
   padding: 0;
 }
@@ -7,37 +7,65 @@ p {
   margin-bottom: 16px;
 }
 
+.hide-for-small{
+  display: none;
+}
+
+.section-container{
+  margin: 0;
+  padding: 0 32px;
+}
 .top-container{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  
+}
 
-  > div{
-    flex: 4;
+@media screen and (min-width: 1340px) {
+
+  .section-container{
+    padding: 0;
   }
-  > div:first-child, > div:last-child{
-    flex: 3;
+
+  .top-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &-center-column{
+      flex: 4;
+    }
+    &-sticky-column{
+      flex: 3;
+    }
   }
-}
-.fixed-columns{
-  position: sticky;
-  display: flex;
-  flex-flow: column;
-  text-align: left;
-  top: 170px;
-  padding: 16px;
-}
 
-.text-upper-case{
-  text-transform: uppercase;
-}
+  .hide-for-small{
+    display: initial;
+  }
 
-.product-row-double{
-  display: flex;
-  justify-content: space-between;
-}
+  .hide-for-large{
+    display: none;
+  }
 
-.product-row-single{
-  display: flex;
-  justify-content: center;
+  .fixed-columns{
+    position: sticky;
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    top: 170px;
+    padding: 16px;
+  }
+
+  .text-upper-case{
+    text-transform: uppercase;
+  }
+
+  .product-row-double{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .product-row-single{
+    display: flex;
+    justify-content: center;
+  }
 }

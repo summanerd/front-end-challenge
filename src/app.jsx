@@ -82,20 +82,25 @@ class App extends React.Component {
     const { onAddToCart, images } = this.store;
     return (
       <main>
-        <section>
+        <section className="section-container">
           <div className="top-container">
-            <div>
+            <div className="hide-for-small top-container-sticky-column">
               <div className="fixed-columns">
                 <p className="text-upper-case">{translations.productHeader}</p>
                 <p>{translations.productDescription1}</p>
                 <p>{translations.productDescription2}</p>
               </div>
             </div>
-            <div>
+            <div className="top-container-center-column">
               <ProductSlides images={images} productDescription="Thinx underwear" />
             </div>
-            <div>
+            <div className="top-container-sticky-column">
               <div className="fixed-columns">
+                <div className="hide-for-large">
+                  <p className="text-upper-case">{translations.productHeader}</p>
+                  <p>{translations.productDescription1}</p>
+                  <p>{translations.productDescription2}</p>
+                </div>
                 <div data-prop="price">
                   Price:
                   $
@@ -118,7 +123,7 @@ class App extends React.Component {
             </div>
           </div>
         </section>
-        <section>
+        <section className="section-container">
           <div className="product-row-double">
             <ProductSummary
               src={bottomImg1}
