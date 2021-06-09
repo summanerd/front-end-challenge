@@ -17,8 +17,27 @@ describe('Product Page', () => {
       expect(SUT.find('[data-prop="price"]').text()).to.match(/\$35.00/);
     });
 
-    it('should display size as unspecified', () => {
-      expect(SUT.find('[data-prop="size"]').text()).to.match(/Size:--/);
+    describe('size dropdown', () => {
+      it('should display default label \'size\'', () => {
+        expect(SUT.find('SelectLabel').text()).to.eq('size');
+      });
+
+      it('should have 6 options in list', () => {
+        expect(SUT.find('SelectOption')).to.have.lengthOf(6);
+      });
+
+      it('should not show options', () => {
+        expect(SUT.find('[data-component="select"]').prop('data-state')).to.eq('closed');
+      });
+      describe('when toggle is clicked', () => {
+        beforeEach(() => {
+          SUT.find('[data-action="toggle"]').simulate('click');
+        });
+
+        it('should show options', () => {
+          expect(SUT.find('[data-component="select"]').prop('data-state')).to.eq('open');
+        });
+      });
     });
 
     it('should display color as black', () => {

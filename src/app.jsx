@@ -39,6 +39,16 @@ function getStore() {
         { value: 'beige', label: 'beige', modifier: 'beige' },
       ];
     },
+    get sizeOptions() {
+      return [
+        { value: 'XS', label: 'X-Small' },
+        { value: 'S', label: 'Small' },
+        { value: 'M', label: 'Medium' },
+        { value: 'L', label: 'Large' },
+        { value: 'XL', label: 'X-Large' },
+        { value: 'XXL', label: 'XX-Large' },
+      ];
+    },
     get size() {
       return size;
     },

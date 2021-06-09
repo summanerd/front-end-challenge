@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ToggleControl } from '../toggle-control/toggle-control';
 import { IncDecControl } from '../inc-dec-control/inc-dec-control';
+import { SingleSelect } from '../select/single-select';
 
 export class ProductDetails extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export class ProductDetails extends React.Component {
     this.onQuantityUpdate = this.onQuantityUpdate.bind(this);
     this.onColorUpdate = this.onColorUpdate.bind(this);
     this.onAddToCart = this.onAddToCart.bind(this);
+    this.onSizeUpdate = this.onSizeUpdate.bind(this);
   }
 
   onColorUpdate(newColor) {
@@ -29,6 +31,11 @@ export class ProductDetails extends React.Component {
     this.updateState();
   }
 
+  onSizeUpdate(newSize) {
+    this.store.updateSize(newSize);
+    this.updateState();
+  }
+
   updateState() {
     this.setState(this.store.getState());
   }
@@ -37,7 +44,7 @@ export class ProductDetails extends React.Component {
     const {
       size, color, quantity, formattedPrice, canAddToCart,
     } = this.state;
-    const { store: { colorOptions } } = this.props;
+    const { store: { colorOptions, sizeOptions } } = this.props;
     return (
       <div className="product-details">
         <div data-prop="price">
@@ -52,8 +59,12 @@ export class ProductDetails extends React.Component {
           <IncDecControl onAdjust={this.onQuantityUpdate} label="quantity" quantity={quantity} max={5} />
         </div>
         <div data-prop="size">
-          Size:
-          {size || '--'}
+          <SingleSelect
+            defaultLabel="size"
+            onChange={this.onSizeUpdate}
+            options={sizeOptions}
+            selectedValues={size ? [size] : []}
+          />
         </div>
         <div>
           <button disabled={!canAddToCart} data-action="add-to-cart" type="submit" onClick={this.onAddToCart}>
