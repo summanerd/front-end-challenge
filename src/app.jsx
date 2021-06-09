@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProductSlides } from './components/product-slides/product-slides';
 import { ProductSummary } from './components/product-summary/product-summary';
+import { IncDecControl } from './components/inc-dec-control/inc-dec-control';
 import translations from './translations.json';
 import img1 from './assets/top section images/highwaist_black_front_1024x1024 (1).jpg';
 import img2 from './assets/top section images/highwaist_black_front_2_1024x1024.jpg';
@@ -15,7 +16,7 @@ import bottomImg4 from './assets/bottom section images/thinx_productpage_-07.jpg
 import bottomImg5 from './assets/bottom section images/thinx_productpage_-08.jpg';
 import './styles.scss';
 
-function getStore() {
+function getStore(onUpdate) {
   let color = 'black';
   let size;
   let quantity = 0;
@@ -46,12 +47,15 @@ function getStore() {
     },
     updateQuantity(newQuantity) {
       quantity = newQuantity;
+      onUpdate();
     },
     updateSize(newSize) {
       size = newSize;
+      onUpdate();
     },
     updateColor(newColor) {
       color = newColor;
+      onUpdate();
     },
     getState() {
       return {
@@ -67,8 +71,15 @@ function getStore() {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.store = getStore();
+    this.store = getStore(() => this.updateState());
     this.state = this.store.getState();
+    this.onQuantityUpdate = this.onQuantityUpdate.bind(this);
+  }
+
+  onQuantityUpdate(adjustment) {
+    const { quantity } = this.state;
+
+    this.store.updateQuantity(quantity + adjustment);
   }
 
   updateState() {
@@ -111,8 +122,7 @@ class App extends React.Component {
                   {color}
                 </div>
                 <div data-prop="quantity">
-                  Quantity:
-                  {quantity}
+                  <IncDecControl onAdjust={this.onQuantityUpdate} label="quantity" quantity={quantity} max={5} />
                 </div>
                 <div data-prop="size">
                   Size:

@@ -3,6 +3,17 @@ body, p, div, main, section{
   padding: 0;
 }
 
+button{
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+
+  &:disabled{
+    background-color: lightgray;
+  }
+}
+
 p {
   margin-bottom: 16px;
 }
@@ -16,7 +27,20 @@ p {
   padding: 0 32px;
 }
 .top-container{
-  
+
+}
+
+.inc-dec-control{
+  display: flex;
+
+  &__label {
+    padding: 4px 8px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  button{
+    padding: 4px;
+  }
 }
 
 @media screen and (min-width: 1340px) {

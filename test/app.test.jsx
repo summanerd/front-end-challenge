@@ -26,7 +26,7 @@ describe('Product Page', () => {
     });
 
     it('should display quantity as 0', () => {
-      expect(SUT.find('[data-prop="quantity"]').text()).to.match(/Quantity:0/);
+      expect(SUT.find('IncDecControl').html()).to.match(/quantity\(0\)/);
     });
   });
 });
