@@ -49,6 +49,8 @@ module.exports = {
           sourceMap: true,
         },
       }, {
+        loader: 'resolve-url-loader',
+      }, {
         loader: 'sass-loader',
 
         options: {
@@ -68,7 +70,7 @@ module.exports = {
         },
       ],
     }, {
-      test: /\.(woff|woff2|ttf|eot)$/i,
+      test: /\.(woff|woff2|ttf|otf)$/i,
       use: [
         {
           loader: 'url-loader',
