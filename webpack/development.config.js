@@ -10,7 +10,7 @@ const distDir = path.resolve(__dirname, '../dist');
 
 module.exports = {
   mode: 'development',
-  entry: { bundle: path.resolve(__dirname, '../src/app.jsx') },
+  entry: { bundle: path.resolve(__dirname, '../index.jsx') },
   output: {
     filename: '[name].js',
     path: distDir,
