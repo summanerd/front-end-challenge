@@ -1,0 +1,43 @@
+p, div, main{
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+.top-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > div{
+    flex: 4;
+  }
+  > div:first-child, > div:last-child{
+    flex: 3;
+  }
+}
+.fixed-columns{
+  position: sticky;
+  display: flex;
+  flex-flow: column;
+  text-align: left;
+  top: 170px;
+  padding: 16px;
+}
+
+.text-upper-case{
+  text-transform: uppercase;
+}
+
+.product-row-double{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-row-single{
+  display: flex;
+  justify-content: center;
+}
