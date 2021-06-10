@@ -31,10 +31,18 @@ export class ProductImageZoom extends React.Component {
     return { isShowing: props.isShowing };
   }
 
+  componentDidMount() {
+    document.addEventListener('keyup', this.close);
+  }
+
   componentDidUpdate() {
     if (this.container.current) {
       this.container.current.classList.add('is-active');
     }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.close);
   }
 
   fadeOut() {
@@ -65,7 +73,7 @@ export class ProductImageZoom extends React.Component {
         {
           images.map(({ src, description }, index) => (
             <div id={`${this.blockName}-${index}`} className={`${this.blockName}__image`} key={`${this.blockName}-${src}`}>
-              <ProductImage src={src} description={description} />
+              <ProductImage src={src} description={description} detailId="product-details" />
             </div>
           ))
         }
