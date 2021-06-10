@@ -1,8 +1,8 @@
-@import './styles/typography';
 @import './styles/variables';
 @import './styles/mixins';
 @import './styles/animations';
 @import './styles/reset';
+@import './styles/typography';
 @import './styles/display';
 @import './styles/spacing';
 @import './styles/controls';
@@ -10,24 +10,31 @@
 @import './styles/product-slides';
 @import './styles/product-image-zoom';
 
+body {
+  font-family: $font-family;
+}
+
 button{
   padding: $space-2;
-  background-color: transparent;
+  background-color: $black;
   border: 1px solid black;
-  color: black;
+  color: $white;
   cursor: pointer;
+  font-size: $font-size-md;
 
   &:disabled{
-    background-color: lightgray;
+    background-color: $dark-gray;
+    border-color: $dark-gray;
   }
 
   &.block{
     width: 100%;
+    font-weight: bold;
   }
 }
 
 p {
-  margin-bottom: $space-3;
+  margin-bottom: $space-4;
 }
 
 .container{
@@ -36,7 +43,27 @@ p {
 
 .section-container{
   margin: 0;
-  padding: 0 $space_4;
+  padding: $space-lg 10%;
+  text-align: left;
+
+  &:first-child{
+    background-color: $light-gray;
+  }
+
+  &:last-child{
+    background-color: $white;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.top-container{
+
+  &-center-column{
+    margin-bottom: $space-6;
+  }
 }
 
 @media screen and (min-width: 1340px) {
@@ -63,7 +90,7 @@ p {
     display: flex;
     flex-flow: column;
     text-align: left;
-    top: 170px;
+    top: 250px;
     padding: $space_3;
   }
 
