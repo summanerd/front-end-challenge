@@ -24,11 +24,30 @@
   }
 }
 
+.product-row{
+  margin-bottom: $space-6;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 .product-summary {
-  margin-bottom: $space-4;
+  margin-bottom: $space-6;
 
   img {
     max-width: 100%;
+  }
+
+  &__title {
+    font-size: $font-size-md;
+  }
+
+  &__caption {
+    font-size: $font-size-tiny;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 

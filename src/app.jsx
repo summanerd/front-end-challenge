@@ -157,7 +157,7 @@ class App extends React.Component {
           </div>
         </section>
         <section className="section-container">
-          <div className="product-row-double">
+          <div className="product-row-double product-row">
             <ProductSummary
               src={bottomImg1}
               description={translations.product2Description}
@@ -171,7 +171,7 @@ class App extends React.Component {
               title={translations.product3Title}
             />
           </div>
-          <div className="product-row-single">
+          <div className="product-row-single product-row">
             <ProductSummary
               src={bottomImg3}
               description={translations.product4Description}
@@ -179,7 +179,7 @@ class App extends React.Component {
               title={translations.product4Title}
             />
           </div>
-          <div className="product-row-double">
+          <div className="product-row-double product-row">
             <ProductSummary
               src={bottomImg4}
               description={translations.product5Description}

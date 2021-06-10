@@ -7,8 +7,10 @@ export function ProductSummary({
 }) {
   return (
     <div className="product-summary">
-      <ProductImage src={src} description={description} />
-      <div className="product-summary__title">
+      <div className="mb-3">
+        <ProductImage src={src} description={description} />
+      </div>
+      <div className="product-summary__title mb-3">
         <a href="/">{title}</a>
       </div>
       <div className="product-summary__caption">{caption}</div>
