@@ -20,7 +20,7 @@ export function getSelectComponent(componentOptions = {}) {
       const { isOpen } = this.state;
 
       this.setState({ isOpen: !isOpen });
-      this[isOpen ? 'onToggleOpen' : 'onToggleClose']();
+      this[isOpen ? 'onToggleClose' : 'onToggleOpen']();
     }.bind(this);
 
     constructor(props) {

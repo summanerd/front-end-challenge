@@ -72,7 +72,7 @@ export class ProductDetails extends React.Component {
         <div className="mb-3 product-control" data-prop="size">
           <SingleSelect
             defaultLabel={translations.size}
-            onChange={this.onSizeUpdate}
+            onChange={([newSize]) => this.onSizeUpdate(newSize)}
             options={sizeOptions}
             selectedValues={size ? [size] : []}
           />
