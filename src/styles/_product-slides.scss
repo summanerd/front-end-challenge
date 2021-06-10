@@ -1,6 +1,7 @@
 .product-slide {
   display: none;
   border: none;
+  background-color: transparent;
 
   img {
     max-width: 100%;
@@ -12,14 +13,25 @@
 }
 
 .product-slides-pagination{
-  margin-bottom: $space-4;
   text-align: center;
 
   &__slide{
-    margin-right: $space-2;
+    $productSlideHeight: 3px;
+    height: $productSlideHeight;
+    width: $productSlideHeight;
+    margin-right: $space-4;
+    padding: $productSlideHeight;
+    @include border-radius(4px);
+    background-color: $dark-gray;
+    border-color: $dark-gray;
 
     &.is-active{
       background-color: black;
+      border-color: black;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
