@@ -44,32 +44,49 @@ export class ProductDetails extends React.Component {
     const {
       size, color, quantity, formattedPrice, canAddToCart,
     } = this.state;
-    const { store: { colorOptions, sizeOptions } } = this.props;
+    const { store: { colorOptions, sizeOptions, translations } } = this.props;
     return (
       <div className="product-details">
-        <div data-prop="price">
-          Price:
-          $
-          {formattedPrice}
+        <div className="mb-3" data-prop="price">
+          <h1>
+            $
+            {formattedPrice}
+          </h1>
         </div>
-        <div data-prop="color">
-          <ToggleControl onSelect={this.onColorUpdate} label="color" value={color} options={colorOptions} />
+        <div className="mb-3" data-prop="color">
+          <ToggleControl
+            onSelect={this.onColorUpdate}
+            label={translations.color}
+            value={color}
+            options={colorOptions}
+          />
         </div>
-        <div data-prop="quantity">
-          <IncDecControl onAdjust={this.onQuantityUpdate} label="quantity" quantity={quantity} max={5} />
+        <div className="mb-3" data-prop="quantity">
+          <IncDecControl
+            onAdjust={this.onQuantityUpdate}
+            label={translations.quantity}
+            quantity={quantity}
+            max={5}
+          />
         </div>
-        <div data-prop="size">
+        <div className="mb-3" data-prop="size">
           <SingleSelect
-            defaultLabel="size"
+            defaultLabel={translations.size}
             onChange={this.onSizeUpdate}
             options={sizeOptions}
             selectedValues={size ? [size] : []}
           />
         </div>
-        <div>
+        <div className="mb-5">
+          <a href="/"><h5>{translations.whatsMySize}</h5></a>
+        </div>
+        <div className="mb-5">
           <button className="block" disabled={!canAddToCart} data-action="add-to-cart" type="submit" onClick={this.onAddToCart}>
-            Add to Cart
+            {translations.addToCart}
           </button>
+        </div>
+        <div className="text-center">
+          <a href="/"><h2>{translations.promotion}</h2></a>
         </div>
       </div>
     );

@@ -38,18 +38,18 @@ function getStore() {
     },
     get colorOptions() {
       return [
-        { value: 'black', label: 'black', modifier: 'black' },
-        { value: 'beige', label: 'beige', modifier: 'beige' },
+        { value: 'black', label: translations.black, modifier: 'black' },
+        { value: 'beige', label: translations.beige, modifier: 'beige' },
       ];
     },
     get sizeOptions() {
       return [
-        { value: 'XS', label: 'X-Small' },
-        { value: 'S', label: 'Small' },
-        { value: 'M', label: 'Medium' },
-        { value: 'L', label: 'Large' },
-        { value: 'XL', label: 'X-Large' },
-        { value: 'XXL', label: 'XX-Large' },
+        { value: 'XS', label: translations.xsmall },
+        { value: 'S', label: translations.small },
+        { value: 'M', label: translations.medium },
+        { value: 'L', label: translations.large },
+        { value: 'XL', label: translations.xlarge },
+        { value: 'XXL', label: translations.xxlarge },
       ];
     },
     get size() {
@@ -63,6 +63,9 @@ function getStore() {
     },
     get zoomIndex() {
       return zoomIndex;
+    },
+    get translations() {
+      return translations;
     },
     set onZoomIndex(handler) {
       onZoomIndex = handler;
@@ -133,7 +136,7 @@ class App extends React.Component {
           <div className="top-container">
             <div className="hide-for-small top-container-sticky-column">
               <div className="fixed-columns">
-                <p className="text-upper-case">{translations.productHeader}</p>
+                <h1 className="text-upper-case mb-4">{translations.productHeader}</h1>
                 <p>{translations.productDescription1}</p>
                 <p>{translations.productDescription2}</p>
               </div>
@@ -143,8 +146,8 @@ class App extends React.Component {
             </div>
             <div className="top-container-sticky-column">
               <div className="fixed-columns">
-                <div className="hide-for-large">
-                  <p className="text-upper-case">{translations.productHeader}</p>
+                <div className="hide-for-large mb-6">
+                  <h1 className="text-upper-case mb-4">{translations.productHeader}</h1>
                   <p>{translations.productDescription1}</p>
                   <p>{translations.productDescription2}</p>
                 </div>

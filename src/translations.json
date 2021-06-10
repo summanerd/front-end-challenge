@@ -16,5 +16,19 @@
   "product5Description": "heavy days",
   "product6Title": "heavy days",
   "product6Caption": "heavy days",
-  "product6Description": "heavy days"
+  "product6Description": "heavy days",
+  "addToCart": "add to cart",
+  "whatsMySize": "what's my size?",
+  "promotion": "build a cycle set and save up to 20%",
+  "size": "size",
+  "xsmall": "x-small",
+  "small": "small",
+  "medium": "medium",
+  "large": "large",
+  "xlarge": "x-large",
+  "xxlarge": "xx-large",
+  "quantity": "quantity",
+  "color": "color",
+  "black": "black",
+  "beige": "beige"
 }

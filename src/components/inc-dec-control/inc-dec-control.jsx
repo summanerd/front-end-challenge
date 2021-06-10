@@ -9,7 +9,7 @@ export function IncDecControl({
       <button data-action="decrease" disabled={quantity === 0} onClick={() => onAdjust(-1)} type="button">-</button>
       <div className="inc-dec-control__label">
         {label}
-        (
+        &nbsp;(
         {quantity}
         )
       </div>
