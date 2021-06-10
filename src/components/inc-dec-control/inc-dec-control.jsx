@@ -5,7 +5,7 @@ export function IncDecControl({
   onAdjust, label, quantity, max,
 }) {
   return (
-    <div className="inc-dec-control">
+    <div className="inc-dec-control product-control">
       <button data-action="decrease" disabled={quantity === 0} onClick={() => onAdjust(-1)} type="button">-</button>
       <div className="inc-dec-control__label">
         {label}

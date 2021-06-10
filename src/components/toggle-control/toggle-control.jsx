@@ -5,7 +5,7 @@ export function ToggleControl({
   onSelect, label, options, value,
 }) {
   return (
-    <div className="toggle-control">
+    <div className="toggle-control product-control">
       <div className="toggle-control__label">
         {label}
       </div>

@@ -60,7 +60,6 @@
 
 .toggle-control {
   display: flex;
-  width: 100%;
   font-size: $font-size-md;
 
   &__label {
@@ -129,5 +128,14 @@
         color: $black;
       }
     }
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+
+  .product-details, .product-control {
+    width: 100%;
+    min-width: 340px;
+    max-width: 340px;
   }
 }

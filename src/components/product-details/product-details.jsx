@@ -69,7 +69,7 @@ export class ProductDetails extends React.Component {
             max={5}
           />
         </div>
-        <div className="mb-3" data-prop="size">
+        <div className="mb-3 product-control" data-prop="size">
           <SingleSelect
             defaultLabel={translations.size}
             onChange={this.onSizeUpdate}
@@ -80,7 +80,7 @@ export class ProductDetails extends React.Component {
         <div className="mb-5">
           <a href="/"><h5>{translations.whatsMySize}</h5></a>
         </div>
-        <div className="mb-5">
+        <div className="mb-5 product-control">
           <button className="block" disabled={!canAddToCart} data-action="add-to-cart" type="submit" onClick={this.onAddToCart}>
             {translations.addToCart}
           </button>
