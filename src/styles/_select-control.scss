@@ -47,7 +47,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Thinx";
+    font-family: $font-family;
     font-size: $font-size-md;
 
     &--is-open{
@@ -57,9 +57,13 @@
 
   &__option{
     border: 1px solid $gray;
-    border-top: none;
+    border-bottom-width: 0px;
     background-color: $white;
     list-style: none;
+
+    &:last-child{
+      border-bottom-width: 1px;
+    }
 
     &--is-active{
       background-color: $selectHighlight;
@@ -69,6 +73,7 @@
   &__option-label{
     display: block;
     width: 100%;
+    margin: 0px;
     padding: $space-2 $space-3;
     text-decoration: none;
     text-align: left;
