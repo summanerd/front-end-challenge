@@ -23,6 +23,7 @@ function getStore() {
   let quantity = 0;
   let zoomIndex = 0;
   let onZoomIndex;
+  let isAddingToCart = false;
   const price = 35;
 
   return {
@@ -71,7 +72,11 @@ function getStore() {
       onZoomIndex = handler;
     },
     onAddToCart() {
+      isAddingToCart = true;
       console.log(`adding ${quantity} product(s) size: ${size}, color: ${color} at ${price} each`);
+      setTimeout(() => { // this is mimicking a service call
+        isAddingToCart = false;
+      }, 500);
     },
     updateQuantity(newQuantity) {
       quantity = newQuantity;
@@ -93,7 +98,7 @@ function getStore() {
         size,
         color,
         quantity,
-        canAddToCart: !!size && quantity > 0,
+        canAddToCart: !isAddingToCart && !!size && quantity > 0,
         formattedPrice: price.toFixed(2),
       };
     },

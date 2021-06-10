@@ -22,6 +22,8 @@ export class ProductDetails extends React.Component {
 
   onAddToCart() {
     this.store.onAddToCart();
+    this.updateState();
+    setTimeout(() => this.updateState(), 1000); // mimicking service call
   }
 
   onQuantityUpdate(adjustment) {
