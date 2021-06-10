@@ -21,9 +21,9 @@ function SelectOption({
       onClick={() => onSelect(option)}
     >
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a className="select__option-label" href="#" onClick={(ev) => ev.preventDefault()}>
+      <button type="button" className="select__option-label" onClick={(ev) => ev.preventDefault()}>
         {option.label}
-      </a>
+      </button>
     </li>
   );
 }

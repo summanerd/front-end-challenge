@@ -68,8 +68,19 @@
 
   &__option-label{
     display: block;
-    padding: $space-3;
+    width: 100%;
+    padding: $space-2 $space-3;
     text-decoration: none;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    color: $black;
+
+    &:focus{
+      outline: none;
+      border: 2px solid $black;
+      font-size: $font-size-lg;
+    }
   }
 
   &--is-open{
