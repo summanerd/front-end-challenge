@@ -67,16 +67,37 @@ p {
   }
 }
 
-@media screen and (min-width: 1340px) {
-
-  .section-container{
-    padding: 0;
-  }
+@media screen and (min-width: $breakpoint-md) {
 
   .top-container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    &-center-column{
+      flex: 1;
+    }
+    &-sticky-column{
+      flex: 1;
+    }
+  }
+  .fixed-columns{
+    padding: $space_3;
+  }
+
+}
+
+@media screen and (min-width: $breakpoint) {
+
+  .section-container{
+
+    &:last-child{
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+  }
+
+  .top-container {
 
     &-center-column{
       flex: 4;
@@ -93,15 +114,5 @@ p {
     text-align: left;
     top: 250px;
     padding: $space_3;
-  }
-
-  .product-row-double{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .product-row-single{
-    display: flex;
-    justify-content: center;
   }
 }

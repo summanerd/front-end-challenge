@@ -35,6 +35,7 @@
   margin-bottom: $space-6;
 
   img {
+    min-width: 100%;
     max-width: 100%;
   }
 
@@ -137,5 +138,29 @@
     width: 100%;
     min-width: 340px;
     max-width: 340px;
+  }
+
+  .product-summary {
+    &__image{
+      &-vertical{
+        max-width: 400px;
+      }
+      &-horizontal{
+        max-width: 600px;
+      }
+    }
+  }
+
+  .product-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .product-row-double {
+    justify-content: space-between;
+  }
+
+  .product-row-single {
+    justify-content: center;
   }
 }

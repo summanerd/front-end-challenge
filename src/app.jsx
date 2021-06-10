@@ -159,16 +159,18 @@ class App extends React.Component {
         <section className="section-container">
           <div className="product-row-double product-row">
             <ProductSummary
-              src={bottomImg1}
-              description={translations.product2Description}
-              caption={translations.product2Caption}
-              title={translations.product2Title}
-            />
-            <ProductSummary
               src={bottomImg2}
               description={translations.product3Description}
               caption={translations.product3Caption}
               title={translations.product3Title}
+              modifier="horizontal"
+            />
+            <ProductSummary
+              src={bottomImg1}
+              description={translations.product2Description}
+              caption={translations.product2Caption}
+              title={translations.product2Title}
+              modifier="vertical"
             />
           </div>
           <div className="product-row-single product-row">
@@ -177,6 +179,7 @@ class App extends React.Component {
               description={translations.product4Description}
               caption={translations.product4Caption}
               title={translations.product4Title}
+              modifier="horizontal"
             />
           </div>
           <div className="product-row-double product-row">
@@ -185,12 +188,14 @@ class App extends React.Component {
               description={translations.product5Description}
               caption={translations.product5Caption}
               title={translations.product5Title}
+              modifier="horizontal"
             />
             <ProductSummary
               src={bottomImg5}
               description={translations.product6Description}
               caption={translations.product6Caption}
               title={translations.product6Title}
+              modifier="vertical"
             />
           </div>
         </section>
