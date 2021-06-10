@@ -8,3 +8,31 @@
 .text-upper-case{
   text-transform: uppercase;
 }
+
+h1 {
+  font-size: $font-size-sm;
+}
+
+h2 {
+  font-size: $font-size-lg;
+}
+
+h3 {
+  font-size: $font-size-md;
+}
+
+h5 {
+  font-size: $font-size-tiny;
+}
+
+p{
+  font-size: $font-size-lg;
+}
+
+a {
+  color: $black;
+
+  &:visited {
+    color: $black;
+  }
+}

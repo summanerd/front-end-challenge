@@ -16,9 +16,19 @@ $space-5: $space-base * 8;
 $space-6: $space-base * 12;
 $space-lg: 100px;
 
+$font-size-1: 11px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 18px;
+
+$font-size-tiny: $font-size-1;
+$font-size-sm: $font-size-2;
+$font-size-md: $font-size-3;
+$font-size-lg: $font-size-4;
 $selectLabelPadding: $space-2;
 $selectHighlight: $light-gray;
 
+$font-family: "Thinx", Helvetica Neue, Helvetica, Arial;
 $breakpoint: 1340px;
 
 
