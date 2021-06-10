@@ -46,7 +46,7 @@ describe('Product Page', () => {
     });
 
     it('should display quantity as 0', () => {
-      expect(SUT.find('IncDecControl').html()).to.match(/quantity\(0\)/);
+      expect(SUT.find('IncDecControl').html()).to.match(/quantity\&nbsp;\(0\)/);
     });
 
     it('should disable add to cart button', () => {
