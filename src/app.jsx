@@ -2,6 +2,7 @@ import React from 'react';
 import { ProductSlides } from './components/product-slides/product-slides';
 import { ProductSummary } from './components/product-summary/product-summary';
 import { ProductDetails } from './components/product-details/product-details';
+import { ProductImageZoom } from './components/product-image-zoom/product-image-zoom';
 import translations from './translations.json';
 import img1 from './assets/top section images/highwaist_black_front_1024x1024 (1).jpg';
 import img2 from './assets/top section images/highwaist_black_front_2_1024x1024.jpg';
@@ -20,6 +21,8 @@ function getStore() {
   let color = 'black';
   let size;
   let quantity = 0;
+  let zoomIndex = 0;
+  let onZoomIndex;
   const price = 35;
 
   return {
@@ -58,6 +61,12 @@ function getStore() {
     get quantity() {
       return quantity;
     },
+    get zoomIndex() {
+      return zoomIndex;
+    },
+    set onZoomIndex(handler) {
+      onZoomIndex = handler;
+    },
     onAddToCart() {
       console.log(`adding ${quantity} product(s) size: ${size}, color: ${color} at ${price} each`);
     },
@@ -69,6 +78,12 @@ function getStore() {
     },
     updateColor(newColor) {
       color = newColor;
+    },
+    updateZoomIndex(newZoomIndex) {
+      zoomIndex = newZoomIndex;
+      if (onZoomIndex) {
+        onZoomIndex();
+      }
     },
     getState() {
       return {
@@ -86,13 +101,34 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.store = getStore();
-    this.state = this.store.getState();
+    this.state = {
+      activeIndex: 0,
+      showZoom: false,
+    };
+    this.showImageZoom = this.showImageZoom.bind(this);
+    this.closeImageZoom = this.closeImageZoom.bind(this);
+  }
+
+  showImageZoom(activeIndex) {
+    this.store.updateZoomIndex(activeIndex);
+    this.setState({ activeIndex, showZoom: true });
+  }
+
+  closeImageZoom() {
+    this.setState({ showZoom: false });
   }
 
   render() {
     const { images } = this.store;
+    const { activeIndex, showZoom } = this.state;
     return (
       <main>
+        <ProductImageZoom
+          images={images}
+          activeIndex={activeIndex}
+          isShowing={showZoom}
+          onClose={this.closeImageZoom}
+        />
         <section className="section-container">
           <div className="top-container">
             <div className="hide-for-small top-container-sticky-column">
@@ -103,7 +139,7 @@ class App extends React.Component {
               </div>
             </div>
             <div className="top-container-center-column">
-              <ProductSlides images={images} productDescription="Thinx underwear" />
+              <ProductSlides images={images} productDescription="Thinx underwear" onSelect={this.showImageZoom} />
             </div>
             <div className="top-container-sticky-column">
               <div className="fixed-columns">

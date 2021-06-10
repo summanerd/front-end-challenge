@@ -5,6 +5,7 @@
 @import './styles/controls';
 @import './styles/select-control';
 @import './styles/product-slides';
+@import './styles/product-image-zoom';
 
 button{
   padding: $space-2;
@@ -24,6 +25,10 @@ button{
 
 p {
   margin-bottom: $space-3;
+}
+
+.container{
+  position: relative;
 }
 
 .section-container{

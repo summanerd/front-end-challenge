@@ -6,7 +6,7 @@ function ProductSlidePagination({ images, activeIndex, onSelect }) {
   return (
     <div className="product-slides-pagination">
       {
-          images.map(({ description }, index) => {
+          images.map(({ src, description }, index) => {
             const classNames = ['product-slides-pagination__slide'];
             if (index === activeIndex) {
               classNames.push('is-active');
@@ -15,6 +15,7 @@ function ProductSlidePagination({ images, activeIndex, onSelect }) {
               <button
                 type="button"
                 role="tab"
+                key={`product-slide-${src}`}
                 className={classNames.join(' ')}
                 aria-label={description}
                 onClick={() => onSelect(index)}
@@ -47,15 +48,21 @@ export class ProductSlides extends React.Component {
   }
 
   render() {
-    const { images, productDescription } = this.props;
+    const { images, productDescription, onSelect } = this.props;
     const { activeIndex } = this.state;
     return (
       <div className="product-slides" aria-label={productDescription}>
         {
         images.map(({ src, description }, index) => (
-          <div className={`product-slide ${index === activeIndex ? 'is-active' : ''}`} key={`product-${src}`}>
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+          <button
+            type="button"
+            className={`product-slide ${index === activeIndex ? 'is-active' : ''}`}
+            key={`product-${src}`}
+            onClick={() => onSelect(index)}
+          >
             <ProductImage src={src} description={description} />
-          </div>
+          </button>
         ))
       }
 
@@ -72,4 +79,5 @@ export class ProductSlides extends React.Component {
 ProductSlides.propTypes = {
   images: PropTypes.arrayOf(PropTypes.object).isRequired,
   productDescription: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired,
 };
