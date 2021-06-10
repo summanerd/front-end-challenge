@@ -135,7 +135,7 @@ class App extends React.Component {
         <section className="section-container">
           <div className="top-container">
             <div className="hide-for-small top-container-sticky-column">
-              <div className="fixed-columns">
+              <div id="product-details" className="fixed-columns">
                 <h1 className="text-upper-case mb-4">{translations.productHeader}</h1>
                 <p>{translations.productDescription1}</p>
                 <p>{translations.productDescription2}</p>
@@ -164,13 +164,14 @@ class App extends React.Component {
               caption={translations.product3Caption}
               title={translations.product3Title}
               modifier="horizontal"
+              uniqueId="img1"
             />
             <ProductSummary
               src={bottomImg1}
               description={translations.product2Description}
               caption={translations.product2Caption}
               title={translations.product2Title}
-              modifier="vertical"
+              uniqueId="img2"
             />
           </div>
           <div className="product-row-single product-row">
@@ -180,6 +181,7 @@ class App extends React.Component {
               caption={translations.product4Caption}
               title={translations.product4Title}
               modifier="horizontal"
+              uniqueId="img3"
             />
           </div>
           <div className="product-row-double product-row">
@@ -189,6 +191,7 @@ class App extends React.Component {
               caption={translations.product5Caption}
               title={translations.product5Title}
               modifier="horizontal"
+              uniqueId="img4"
             />
             <ProductSummary
               src={bottomImg5}
@@ -196,6 +199,7 @@ class App extends React.Component {
               caption={translations.product6Caption}
               title={translations.product6Title}
               modifier="vertical"
+              uniqueId="img5"
             />
           </div>
         </section>

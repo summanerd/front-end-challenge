@@ -58,7 +58,7 @@ export class ProductImageZoom extends React.Component {
       return null;
     }
     return (
-      <div className="product-image-zoom" ref={this.container}>
+      <div className="product-image-zoom" role="dialog" aria-modal ref={this.container}>
         <div className="product-image-zoom__header">
           <CloseButton onClick={this.close} />
         </div>

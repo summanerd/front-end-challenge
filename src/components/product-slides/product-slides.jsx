@@ -15,9 +15,10 @@ function ProductSlidePagination({ images, activeIndex, onSelect }) {
               <button
                 type="button"
                 role="tab"
+                aria-current={index === activeIndex}
                 key={`product-slide-${src}`}
                 className={classNames.join(' ')}
-                aria-label={description}
+                aria-label={`view image ${description}`}
                 onClick={() => onSelect(index)}
               />
             );
@@ -51,7 +52,7 @@ export class ProductSlides extends React.Component {
     const { images, productDescription, onSelect } = this.props;
     const { activeIndex } = this.state;
     return (
-      <div className="product-slides" aria-label={productDescription}>
+      <div className="product-slides" role="region" aria-label={`images of ${productDescription}`}>
         {
         images.map(({ src, description }, index) => (
           // eslint-disable-next-line jsx-a11y/click-events-have-key-events
@@ -61,7 +62,7 @@ export class ProductSlides extends React.Component {
             key={`product-${src}`}
             onClick={() => onSelect(index)}
           >
-            <ProductImage src={src} description={description} />
+            <ProductImage src={src} description={description} detailId="product-details" />
           </button>
         ))
       }

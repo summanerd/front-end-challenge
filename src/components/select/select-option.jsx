@@ -17,6 +17,7 @@ function SelectOption({
       className={classNames.join(' ')}
       data-select-value={option.value}
       data-action="select"
+      aria-current={isSelected}
       onClick={() => onSelect(option)}
     >
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

@@ -16,6 +16,8 @@ export function ToggleControl({
             <button
               key={`toggle-${option.value}`}
               disabled={isActive}
+              aria-pressed={isActive}
+              aria-disabled={isActive}
               className={`toggle-control__option toggle-control__option--${option.modifier} ${isActive ? ' is-active' : ''}`}
               type="button"
               onClick={() => onSelect(option.value)}
