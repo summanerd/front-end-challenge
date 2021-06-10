@@ -176,6 +176,7 @@ class App extends React.Component {
               description={translations.product2Description}
               caption={translations.product2Caption}
               title={translations.product2Title}
+              modifier="vertical"
               uniqueId="img2"
             />
           </div>
