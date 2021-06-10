@@ -5,6 +5,7 @@ function SelectLabel({ label, classes }) {
   return (
     <div className={classes.join(' ')} data-prop="label">
       {label}
+      <span className="arrow" />
     </div>
   );
 }

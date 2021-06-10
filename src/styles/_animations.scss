@@ -16,3 +16,24 @@
     opacity: 0;
   }
 }
+
+@keyframes rotate-180-animation {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes rotate-180-animation-rev {
+  0% {
+    transform: rotate(225deg);
+  }
+  50% {
+    transform: rotate(135deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
