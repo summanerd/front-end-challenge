@@ -1,33 +1,37 @@
-.close-button{
-    width: 25px;
-    height: 25px;
-    background-color: transparent;
-    border: none;
+.close-button {
+  $close-button-height: 17px;
+  width: $close-button-height;
+  height: $close-button-height;
+  background-color: transparent;
+  border: none;
 
   &__left {
-    height: 25px;
-    width: 2px;
-    margin-left: 12px;
+    height: $close-button-height;
+    width: 1px;
     background-color: black;
     transform: rotate(45deg);
     Z-index: 1;
   }
 
   &__right {
-    height: 25px;
-    width: 2px;
+    height: $close-button-height;
+    width: 1px;
     background-color: black;
     transform: rotate(90deg);
     Z-index: 2;
   }
 }
+
 .product-image-zoom {
   display: block;
   position: absolute;
   z-index: 1;
   min-width: 100%;
   max-width: 100%;
+  min-height: 100%;
   opacity: 0;
+  text-align: center;
+  padding-top: $space-3;
   background-color: $white;
 
   &.is-active {
@@ -38,18 +42,17 @@
     min-width: 90%;
     max-width: 90%;
     margin: 0 auto;
+    padding-top: $space-4;
   }
 
-  &__header{
-    display: flex;
-
-    .close-button {
-      justify-self: flex-end;
-    }
+  .close-button {
+    position: fixed;
+    top: $space-2;
+    right: $space-3;
   }
 
   img {
-    max-width: 100%;
+    max-width: 90%;
   }
 }
 
